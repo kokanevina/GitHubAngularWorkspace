@@ -1,0 +1,13 @@
+.myNav{
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+ul li{
+    display: inline-block;
+    margin: 10px;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}

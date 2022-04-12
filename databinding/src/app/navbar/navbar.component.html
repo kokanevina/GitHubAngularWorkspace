@@ -1,0 +1,24 @@
+<nav class="myNav">
+    <ul>
+        <li><h3><a href="#">{{brandname}}</a></h3></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Departments</a></li>
+        <li><a href="#">Softwares</a></li>
+    </ul>
+</nav>
+<section>
+ <label>Enter first Name:</label> <input type="text" (focus)="demoFocus($event)" (blur)="demoBlur()" #firstName>
+<br>
+<label>Enter last Name:</label> <input type="text" (select)="demoSelect()">
+<br>
+<input type="checkbox" (change)="demoChange()"> <label>Show password</label>
+<br>
+<br>
+<label>Enter Width for image</label><input type="number" [(ngModel)]="wd">
+<label>Enter Height for image</label><input type="number" [(ngModel)]="ht">
+<b>{{ht}}</b> <!-- string interpolation : property binding--><br>
+<img src="https://picsum.photos/id/23/200/200" alt="no image" [height]="ht" [width]="wd"> <!--attribute binding -->
+<img src="https://picsum.photos/id/23/200/200" alt="no image" height="{{ht}}" width="{{wd}}"> 
+<br>
+<input type="button" value="ZOOM" (mouseover)="zoomIn()">
+</section>
