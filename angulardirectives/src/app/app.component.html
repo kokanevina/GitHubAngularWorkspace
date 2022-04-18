@@ -1,5 +1,5 @@
 <div>
-  <h1>Types of Directives</h1>
+  <h1>Structural Directives</h1>
   <div>
     <h3>use of ngIf</h3>
     <span> if condition is true then element is added, if condition is false 
@@ -9,4 +9,76 @@
     <p *ngIf="myAge>=18"> You are allowed for voting</p> 
     <p *ngIf="myAge<18">Sorry Your age is less than 18 so not allowed for voting</p>
   </div>
+  <hr>
+  <div>
+    <h3>use of ngIf else</h3>
+    <span> if condition is true then element is added, if condition is false 
+      then element will be removed</span> <br>
+    <label>Enter your age:</label><input type="number" [(ngModel)]="myAge">
+     <span>Your age is : <b>{{myAge}}</b></span>
+    <p *ngIf="myAge>=18; else elsepart"> You are allowed for voting</p> 
+    <ng-template #elsepart>
+      <p>Sorry Your age is less than 18 so not allowed for voting</p>
+      <b>Sorry...!!! you can not go for further steps</b>
+    </ng-template>  
+  </div>
+  <hr>
+  <div>
+    <h3>use of ngIf then else</h3>
+    <span> if condition is true then element is added, if condition is false 
+      then element will be removed</span> <br>
+    <label>Enter your age:</label><input type="number" [(ngModel)]="myAge">
+     <span>Your age is : <b>{{myAge}}</b></span>
+    <span *ngIf="myAge>=18; then thenpart; else elsepart1"></span>
+    <ng-container *ngIf="myAge>=18; then thenpart; else elsepart1"></ng-container>
+    <ng-template #thenpart>
+      <p>Your age is >= 18 so allowed for voting!!! Hurrey!!!</p>
+    </ng-template>
+    <ng-template #elsepart1>
+      <p>Sorry Your age is less than 18 so not allowed for voting</p>
+      <b>Sorry...!!! you can not go for further steps</b>
+    </ng-template>  
+  </div>
+</div>
+<select [(ngModel)]="technologies">
+  <option value="fe">FRONT END TECHNOLGIES</option>
+  <option value="be">BACK END TECHNOLGIES</option>
+</select>
+<b>b1 asjasjdhskhfdjfhgkjfdhgj</b>
+<ng-container *ngIf="technologies=='fe'; then frontend"></ng-container>
+<b>b2 asjasjdhskhfdjfhgkjfdhgj</b>
+<ng-container *ngIf="technologies=='be'; then backend"></ng-container>
+<b>b3 asjasjdhskhfdjfhgkjfdhgj</b>
+<ng-template #frontend>
+  <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>BOOTSTRAP</li>
+    <li>ANGULAR</li>
+    <li>REACT</li>
+  </ol>
+</ng-template>
+<ng-template #backend>
+  <ol>
+    <li>JAVA</li>
+    <li>C#</li>
+    <li>PHP</li>
+    <li>Python</li>
+    <li>CPP</li>
+  </ol>
+</ng-template>
+<div>
+  <h2>ngFor</h2>
+  <p>{{names}}</p>
+  <span *ngFor="let name of names" style="border: 1px solid red;">{{name}}</span>
+ <ol>
+   <li *ngFor="let name of names">{{name}}</li>
+ </ol>
+ <!-- <ol *ngFor="let name of names">
+  <li>{{name}}</li>
+</ol> -->
+<!-- display names in table horizontally-->
+<table border="1">
+  <tr><td *ngFor="let name of names">{{name}}</td></tr>
+</table>
 </div>
