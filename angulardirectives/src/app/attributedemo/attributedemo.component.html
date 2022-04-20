@@ -1,0 +1,55 @@
+<h2>Styling elements</h2>
+<h3>Inline style css</h3>
+<div style="height: 100px; width: 200px; border: 4px solid red;">
+    India is my country. All indians are my brothers and sisters
+</div>
+<h3>External style css</h3>
+<div class="myStyle">
+    India is my country. All indians are my brothers and sisters
+</div>
+<label>Choose Background color:</label><input type="color"[(ngModel)]="bgColor">
+<div  [ngStyle]="{height: myHeight, border:'2px solid blue', backgroundColor:bgColor}">
+    India is my country. All indians are my brothers and sisters
+</div>
+<div  [ngStyle]="{'height': myHeight, 'border':'2px solid blue', 'background-color':bgColor}">
+    India is my country. All indians are my brothers and sisters
+</div>
+<label>Choose Background color:</label><input type="color"[(ngModel)]="myStyleObject.backgroundColor"><br>
+<label>Choose Background color:</label><input type="color" [(ngModel)]="myBg" (input)="changeBackground()"><br>
+<div  [ngStyle]="myStyleObject">
+    India is my country. All indians are my brothers and sisters
+</div>
+<hr>
+<h2>styling with class</h2>
+<div class="myFont myColor myDimension">
+    Welcome to Neosoft Technologies  Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+</div>
+<div ngClass="myFont myColor myDimension">
+    Welcome to Neosoft Technologies  Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+</div>
+<h3>Direct Array</h3>
+<div [ngClass]="['myFont', 'myColor', 'myDimension']">
+    Welcome to Neosoft Technologies  Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+</div>
+<h3>Array declared in ts</h3>
+<select [(ngModel)]="choice" (change)="operate()">
+    <option value="1">PUSH</option>
+    <option value="2">POP</option>
+</select>
+<div [ngClass]="myStyleArray">
+    Welcome to Neosoft Technologies  Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+</div>
+<h3>object declared in ts</h3>
+<div [ngClass]="myClassObject">
+    Welcome to Neosoft Technologies  Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+    Welcome to Neosoft Technologies
+</div>

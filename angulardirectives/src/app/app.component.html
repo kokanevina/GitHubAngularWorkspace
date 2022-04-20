@@ -118,4 +118,23 @@
   </div>
   <button (click)="addBook(idnode.value,namenode.value, pricenode.value)">ADD BOOK</button>
 </div>
+
+<select [(ngModel)]="myColor">
+  <option value="1">RED</option>
+  <option value="2">GREEN</option>
+  <option value="3">BLUE</option>
+</select>
+<div [ngSwitch]="myColor">
+  <p *ngSwitchCase="1">The Hot Sun is RED</p>
+  <p *ngSwitchCase="2">The Grass is Green</p>
+  <p *ngSwitchCase="3">The sky is BLUE</p>
+  <p *ngSwitchCase="2">The tree is GREEN</p>
+  <p *ngSwitchCase="3">The water is BLUE</p>
+  <p *ngSwitchCase="1">The Rose is RED</p>
+  <p *ngSwitchDefault>The Dark Night</p>
+</div>
+</div>
+<hr>
+<div>
+  <app-attributedemo></app-attributedemo>
 </div>

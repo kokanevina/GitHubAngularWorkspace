@@ -1,0 +1,8 @@
+Take maths,physics and chemistry marks from user
+calculate percenatage(assume out of 100)
+use ngSwitch directive to display following
+
+perc>=70  : DISTINCTION
+perc between 60 to 69 : FIRST CLASS
+perc between 40 to 59 : PASS
+perc <40 : FAIL

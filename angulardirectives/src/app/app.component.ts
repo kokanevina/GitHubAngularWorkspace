@@ -12,6 +12,7 @@ export class AppComponent {
   myAge=0;
   technologies='fe';
   nums=0;
+  myColor=0;
   dummyArray=new Array(this.nums); // used just for looping
   authArray=new Array(this.nums); // used to save authors
   initializeArray(){
