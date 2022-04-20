@@ -79,6 +79,43 @@
 </ol> -->
 <!-- display names in table horizontally-->
 <table border="1">
-  <tr><td *ngFor="let name of names">{{name}}</td></tr>
+  <tr><td *ngFor="let name of names; let i=index; let ct=count; let od=odd; let ev=even; let fs=first">
+    {{name}}-{{i}}-{{ct}}-{{od}}-{{ev}}-{{fs}}</td></tr>
 </table>
+
+<table border="1">
+  <tr *ngFor="let name of names; let i=index; let ct=count; let od=odd; let ev=even; let fs=first">
+    <td >{{name}}</td>
+  <td>{{i}}</td>
+<td>{{ct}}</td><td>{{od}}</td></tr>
+</table>
+<hr>
+
+<label>Choose City:</label>
+<select [(ngModel)]="ct">
+  <option [value]="city" *ngFor="let city of cities">{{city | uppercase}}</option>
+</select>
+<label>You have selected </label> <b>{{ct}}</b>
+<hr>
+<table border="1">
+  <tbody>
+    <tr *ngFor="let book of bookArray">
+      <td>{{book.bookId}}</td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.bookPrice}}</td>
+      <td *ngFor="let auth of book.bookAuthors">{{auth}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <i>Enter Book  Details:</i>
+  <label>Book Id:</label><input type="number" #idnode> <br>
+  <label>Book Name:</label><input type="text" #namenode> <br>
+  <label>Book Price:</label><input type="number" #pricenode> <br>
+  <label>How many Authors:</label><input type="number" [(ngModel)]="nums" (input)="initializeArray()" min="0">
+  <div *ngFor="let item of dummyArray;let i=index">
+    <label>Author Name:</label><input type="text" [(ngModel)]="authArray[i]" (input)="showArray()">
+  </div>
+  <button (click)="addBook(idnode.value,namenode.value, pricenode.value)">ADD BOOK</button>
+</div>
 </div>
