@@ -7,5 +7,50 @@
   <b>{{message1 | titlecase }}</b>
   <p>{{message.slice(5)}}</p>  <!-- mixture of view (GUI) and model (business logic)-->
   <p>{{message.toUpperCase()}}</p>
-  <p>{{message | slice}}</p>
+  <p>{{message | slice : 3}}</p>
+  <!-- take user input for start index and end index use seperate input fields-->
+  <p>{{message | slice : sliceObj.startIndex : sliceObj.endIndex}}</p>
+  <hr>
+  <p>{{salary}}</p>
+  <p>{{salary | number}}</p>
+  <p>{{salary | number : '5.1'}}</p>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal}}</li>
+  </ol>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal | number}}</li>
+  </ol>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal | number : '5.2'}}</li>
+  </ol>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal | number : '5.1-2'}}</li>
+  </ol>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal | number : '6.1-2'}}</li>
+  </ol>
+  <hr>
+  <p>{{salary | currency}}</p>
+  <p>{{salary | currency:'INR'}}</p>
+  <p>{{salary | currency:'EUR'}}</p>
+  <p>{{salary | currency:'EUR':'code'}}</p> <!-- symbol bydefault-->
+  <!-- true: symbol (bydefualt) false: code-->
+  <p>{{salary | currency:'EUR':false}}</p>
+  <ol>
+    <li *ngFor="let sal of salaries">{{sal | currency: 'INR':'symbol':'5.1-1'}}</li>
+  </ol>
+<hr>
+<p>{{today}}</p>
+<p>{{today | date}}</p> <!-- mediumDate-->
+<p>{{today | date : 'short'}}</p>
+<p>{{today | date : 'longDate'}}</p>
+<p>{{today | date : 'fullTime'}}</p>
+<p>{{today | date : 'dd-MM-yyyy'}}</p>
+<p>{{today | date : 'd-M-yy'}}</p>
+<p>{{today | date : 'd-MMM-yy'}}</p>
+<p>{{today | date : 'd-MMMM-yy'}}</p>
+<p>{{today | date : 'dd-MMMM-yyyy'}}</p>
+<!-- shortDate, mediumDate,longDate,fullDate
+shortTime, mediumTime,longTime,fullTime
+short, medium, long full-->
 </div>

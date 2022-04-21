@@ -1,0 +1,5 @@
+Display Train Array : trainId, trainType, trainRoute, constructDate, trainTicket
+trainType : UpperCase
+trainRoute: lowecase
+trainTicker : INR currency
+constructDate : FULL Date
