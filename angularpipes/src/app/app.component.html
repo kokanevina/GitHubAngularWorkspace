@@ -52,5 +52,50 @@
 <p>{{today | date : 'dd-MMMM-yyyy'}}</p>
 <!-- shortDate, mediumDate,longDate,fullDate
 shortTime, mediumTime,longTime,fullTime
-short, medium, long full-->
+short, medium, long, full-->
 </div>
+<hr>
+<section>
+  <select [(ngModel)]="colName">
+    <option value="tId">ID</option>
+    <option value="tType">TYPE</option>
+    <option value="tRoute">ROOT</option>
+    <option value="constructDate">CONSTRUCTION DATE</option>
+    <option value="tTicket">TICKET FARE</option>
+  </select>
+  <table border="1">
+    <thead>
+      <tr><th>ID</th><th>TYPE</th><th>ROOT</th><th>CONSTRUCTION DATE</th><th>TICKET FARE</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let train of trainArray | orderBy : colName : desc : insensitive">
+        <td>{{train.tId}}</td>
+        <td>{{train.tType}}</td>
+        <td>{{train.tRoute}}</td>
+        <td>{{train.constructDate}}</td>
+        <td>{{train.tTicket}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- orderBy : order property : ascending/descending : case-sensitive/insensitive
+  ascending/descending : default- false for asc, true: descending
+case-sensitive/insensitive : default- false for sensitive, true: insensitive  -->
+<hr>
+<table border="1">
+  <thead>
+    <tr><th (click)="arraySort('tId')">ID</th><th (click)="arraySort('tType')">TYPE</th><th (click)="arraySort('tRoute')">ROOT</th><th>CONSTRUCTION DATE</th><th>TICKET FARE</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let train of trainArray | orderBy : colName : desc : insensitive">
+      <td>{{train.tId}}</td>
+      <td>{{train.tType}}</td>
+      <td>{{train.tRoute}}</td>
+      <td>{{train.constructDate}}</td>
+      <td>{{train.tTicket}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<b>Birthdate is {{birthDate}}</b>
+<b>Age is {{birthDate | age }} years</b>
+</section>

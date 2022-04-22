@@ -1,0 +1,6 @@
+Put OrderBy pipe on train array in new table. 
+Default order on trainId
+1. When u click on column 1st time : order should be ascending
+2. When u click on same column again : order should be opposite of previous order 
+
+Hint : This logic can be done in single line only. using ! operator
