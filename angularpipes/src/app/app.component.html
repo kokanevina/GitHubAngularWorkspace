@@ -98,4 +98,9 @@ case-sensitive/insensitive : default- false for sensitive, true: insensitive  --
 <hr>
 <b>Birthdate is {{birthDate}}</b>
 <b>Age is {{birthDate | age }} years</b>
+<h2>{{title.charAt(2)}}</h2> <!-- mixture of view and model-->
+<h2>{{title }}</h2>
+<label>Enter index:</label><input type="number" [(ngModel)]="index" min="0">
+<h2>{{title | charat : index}}</h2>
+<b>{{'india*is*my*country' | mytitlecase : '*'}}</b>
 </section>

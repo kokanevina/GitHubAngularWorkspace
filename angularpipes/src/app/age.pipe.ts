@@ -6,8 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 //pipe class
 export class AgePipe implements PipeTransform {
 
-/*   transform(property:Date): number {
+/*   transform(property:Date, ...arr:any): number {
     console.log("Hello"+property);
+     console.log("Parameters"+arr);
     let today=new Date().getTime();
     let bdate=property.getTime();
     let myTime=today-bdate;
@@ -17,6 +18,7 @@ export class AgePipe implements PipeTransform {
   } */
   transform(property:Date): number {
     console.log("Hello"+property);
+   
     let today=new Date().getFullYear();
     let bdate=property.getFullYear();
     let myAge=today-bdate;

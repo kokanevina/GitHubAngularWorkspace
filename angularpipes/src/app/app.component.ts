@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'anGularPipes';
   message="welcome to neosoft technologies";
   message1="welcome-to-neosoft-technologies";
-  
+  index=1;
   sliceObj={
     startIndex:-10,
     endIndex:-2

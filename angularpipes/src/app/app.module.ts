@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { OrderModule } from 'ngx-order-pipe';
 import { AppComponent } from './app.component';
 import { AgePipe } from './age.pipe';
+import { CharatPipe } from './charat.pipe';
+import { MytitlecasePipe } from './mytitlecase.pipe';
 
 @NgModule({
   declarations: [
     AppComponent, // component
-    AgePipe // custom pipe
+    AgePipe, CharatPipe, MytitlecasePipe // custom pipe
   ],
   imports: [
     BrowserModule,FormsModule, OrderModule
