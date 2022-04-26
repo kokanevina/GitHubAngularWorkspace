@@ -19,5 +19,6 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
     console.log(this.loginForm.value.userName);
     console.log(this.loginForm.value.password);
+    console.log(this.loginForm.get('userName')?.value); 
   }
 }

@@ -1,0 +1,44 @@
+
+<section >
+    <h2 class="w-50 mx-auto"> REGISTRATION FORM</h2>
+    <form class="w-50 mx-auto"  [formGroup]="registerForm" (submit)="submitForm()" novalidate>
+        <label>Enter Name</label>
+        <input type="text" formControlName="name" > <br><br>
+        <label>Enter Email Id</label>
+        <input type="email" formControlName="emailId" ><br><br>
+        <label>Enter Contact Number</label>
+        <input type="tel" formControlName="contactNumber" > <br><br>
+        <label>Enter Age</label>
+        <input type="number" formControlName="userAge"><br>
+        <div *ngIf="age.touched && age.invalid" class="text-danger">
+            <div *ngIf="age.errors?.['required']">
+                <b>Age is required</b>
+            </div>
+            <div *ngIf="age.errors?.['min']">
+                <b>Age should be greater than or equal to 16</b>
+            </div>
+            <div *ngIf="age.errors?.['max']">
+                <b>Age should be less than or equal to 55</b>
+            </div>
+        </div><br>
+        <label>Set Username</label>
+        <input type="text" formControlName="userName"> <br><br>
+        <label>Set Password</label>
+        <input type="password" formControlName="password"><br>
+        <div *ngIf="pass.touched && pass.invalid" class="text-danger">
+            <div *ngIf="pass.errors?.['required']">
+                <b>Password is required</b>
+            </div>
+            <div *ngIf="pass.errors?.['minlength']">
+                <b>Password should be minimum 6 characters long</b>
+            </div>
+            <div *ngIf="pass.errors?.['maxlength']">
+                <b>Password should be maximum 12 characters long</b>
+            </div>
+        </div><br>
+        <label>Confirm Password</label>
+        <input type="password" formControlName="confirmPassword"><br><br>
+        <input type="submit" value="REGISTER"> 
+        <input type="reset">
+    </form>
+</section>
