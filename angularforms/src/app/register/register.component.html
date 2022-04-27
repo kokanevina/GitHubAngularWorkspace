@@ -5,9 +5,23 @@
         <label>Enter Name</label>
         <input type="text" formControlName="name" > <br><br>
         <label>Enter Email Id</label>
-        <input type="email" formControlName="emailId" ><br><br>
-        <label>Enter Contact Number</label>
-        <input type="tel" formControlName="contactNumber" > <br><br>
+        <input type="email" formControlName="emailId" ><br>
+        <div *ngIf="mail.touched && mail.invalid" class="text-danger">
+            <!-- put required div block here-->
+            <div *ngIf="mail.errors?.['email']">
+                <b>Please put valid email Id</b>
+            </div>
+        </div>
+        <br>
+        <label>Enter mobile Number</label>
+        <input type="tel" formControlName="contactNumber" > <br>
+        <div *ngIf="contact.touched && contact.invalid" class="text-danger">
+            <!-- put required div block here-->
+            <div *ngIf="contact.errors?.['pattern']">
+                <b>Mobile number must contain only digits and must have 10 digits</b>
+            </div>
+        </div>
+        <br>
         <label>Enter Age</label>
         <input type="number" formControlName="userAge"><br>
         <div *ngIf="age.touched && age.invalid" class="text-danger">
@@ -24,7 +38,7 @@
         <label>Set Username</label>
         <input type="text" formControlName="userName"> <br><br>
         <label>Set Password</label>
-        <input type="password" formControlName="password"><br>
+        <input type="text" formControlName="password"><br>
         <div *ngIf="pass.touched && pass.invalid" class="text-danger">
             <div *ngIf="pass.errors?.['required']">
                 <b>Password is required</b>
@@ -35,10 +49,24 @@
             <div *ngIf="pass.errors?.['maxlength']">
                 <b>Password should be maximum 12 characters long</b>
             </div>
+            <div *ngIf="pass.errors?.['pattern']">
+                <b>Password should contain atleast one </b>
+                <ul>
+                    <li>capital letter</li>
+                    <li>small letter</li>
+                    <li>digit</li>
+                    <li>special symbol</li>
+                </ul>
+            </div>
         </div><br>
         <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword"><br><br>
-        <input type="submit" value="REGISTER"> 
+        <input type="text" formControlName="confirmPassword" [style.border]="(cpassword.touched && !registerForm.errors?.['mismatch'])?'2px solid green':'2px solid red'"><br>
+        <div *ngIf="registerForm.invalid" class="text-danger">
+            <div *ngIf="cpassword.touched && registerForm.errors?.['mismatch']">
+                <b>Confirm Password and Password should match</b>
+            </div>
+        </div>
+        <input type="submit" value="REGISTER"  [disabled]="registerForm.invalid"> 
         <input type="reset">
     </form>
 </section>

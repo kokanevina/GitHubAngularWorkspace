@@ -1,0 +1,2 @@
+Implement Required Validator for all other fields in registration form. 
+Also put specific messages for required fields

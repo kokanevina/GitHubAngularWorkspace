@@ -1,0 +1,2 @@
+Validate Name : it should contain only alphabets
+Validate username : it should be 3 to 15 characters long
