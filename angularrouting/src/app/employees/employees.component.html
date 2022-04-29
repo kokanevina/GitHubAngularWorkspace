@@ -1,0 +1,11 @@
+<h3>This is EmployeesComponent View</h3><br>
+<table class="table table-bordered">
+  <caption>Employee Information</caption>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empSalary}}</td>    
+      </tr>
+    </tbody>
+  </table>
