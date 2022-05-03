@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     EmployeesComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

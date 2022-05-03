@@ -6,6 +6,7 @@
         <td>{{employee.empId}}</td>
         <td>{{employee.empName}}</td>
         <td>{{employee.empSalary}}</td>    
+        <td><a [routerLink]="['/details',employee.empId,employee.empName]">Show Perosnal Info</a></td>    
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,5 @@
+Start Doing Crud Operation on StudentArray
+in StudentComponent
+ADD new student, search exisiting student, delete student with id, display all student, update student info by searhcing it on id
+
+Complete one operation per day
