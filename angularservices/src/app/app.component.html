@@ -1,0 +1,39 @@
+<section>
+  <h2>Addition using ngModel</h2>
+  <label>Enter number 1:</label>
+  <input type="number" [(ngModel)]="no1">
+  <label>Enter number 1:</label>
+  <input type="number" [(ngModel)]="no2"><br>
+  <button (click)="action('add')">ADD NUMBERS</button>
+  <button (click)="action('subtract')">SUBTRACT NUMBERS</button>
+  <button (click)="action('divide')">DIVIDE NUMBERS</button>
+  <button (click)="action('multiply')">MULTIPLY NUMBERS</button>
+  <div>
+    Result is :<b>{{result}}</b>
+  </div>
+</section>
+<section>
+  <h2>Addition using template reference varibles</h2>
+  <label>Enter number 1:</label>
+  <input type="number" #numberNode1>
+  <label>Enter number 1:</label>
+  <input type="number" #numberNode2><br>
+  <button (click)="action1('add',numberNode1.value,numberNode2.value)">ADD NUMBERS</button>
+  <button (click)="action1('subtract',numberNode1.value,numberNode2.value)">SUBTRACT NUMBERS</button>
+  <button (click)="action1('divide',numberNode1.value,numberNode2.value)">DIVIDE NUMBERS</button>
+  <button (click)="action1('multiply',numberNode1.value,numberNode2.value)">MULTIPLY NUMBERS</button>
+  <div>
+    Result is :<b>{{result}}</b>
+  </div>
+</section>
+<hr>
+<section>
+  <h1>Counter Service object is shared among Child1 and Child2 Component</h1>
+  <app-child1></app-child1>
+  <hr>
+  <app-child2></app-child2>
+  <hr>
+  <h1>Counter Service object is individual for  Child3 Component</h1>
+  <app-child3></app-child3>
+</section>
+
