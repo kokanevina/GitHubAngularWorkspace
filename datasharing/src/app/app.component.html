@@ -1,0 +1,12 @@
+
+<div>
+  <h2>App Component</h2>
+  <label>Enter company Name:</label>
+  <input type="text"[(ngModel)]="companyName">
+  <h3>{{companyName}}</h3>
+  <h4>{{loc}}</h4>
+</div>
+<hr>
+<div>
+  <app-company [comName]="companyName" [styleObj]="myStyle" (eventEmitter1)="accept1($event)" (eventEmitter2)="accept2($event)" ></app-company>
+</div>

@@ -1,0 +1,10 @@
+<div [ngStyle]="styleObj">
+    <h2>Company Component</h2>
+    <h3>{{comName}}</h3>
+   <label>Enter company Name:</label> 
+   <input type="text"[(ngModel)]="comName" (blur)="pass2()">
+   <br>
+   <label>Enter location</label>
+   <input type="text" [(ngModel)]="location" (blur)="pass1()">
+   <p>Location is : <b>{{location}}</b></p>
+</div>
