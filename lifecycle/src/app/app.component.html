@@ -1,0 +1,18 @@
+
+<section>
+    <b>City is : {{city}}</b> <br>
+   <label>Enter city:</label> <input type="text" [(ngModel)]="city"><br>
+    <b>City is : {{company}}</b> <br>
+    <label>Enter company:</label><input type="text" [(ngModel)]="company"><br>
+    <b>Array is :</b> 
+    <ol>
+        <li *ngFor="let emp of employees">{{emp}}</li>
+    </ol>
+    <label>Enter employee to push in array:</label>
+    <input type="text" #empNode (blur)="pushele(empNode.value)">
+</section>
+<hr>
+<button (click)="state=!state">ADD/REMOVE CHILD</button>
+<div *ngIf="state">
+    <app-lifecyclechild [myCity]="city" [myCompany]="company" [myEmployees]="employees"></app-lifecyclechild>
+</div>

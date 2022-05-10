@@ -7,9 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class InfoComponent implements OnInit {
   employeeId=0;
-  employeeName:string|null='';
+  employeeName:string|null;
   infoObj:PersonalInfo | undefined =new PersonalInfo(0,0,'',0);
   constructor(private _activeRoute:ActivatedRoute ) {
+    this.employeeName='';
    }
   ngOnInit(): void {
     let id=this._activeRoute.snapshot.paramMap.get('eid');

@@ -1,0 +1,12 @@
+<p>
+  <b>Country Name: <span>{{country}}</span></b>
+  <label>Enter country:</label><input type="text" [(ngModel)]="country">
+</p>
+<div>
+  <b>Cities:</b>
+<ol><li *ngFor="let ct of cities">{{ct}}</li></ol>
+  <label>Enter city to push:</label><input type="text" #innode (change)="cities.push(innode.value)">
+</div>
+<hr>
+<h2>CHILD-1</h2>
+<app-child1 [myCountry]="country" [myCities]="cities"></app-child1>
